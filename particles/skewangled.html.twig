@@ -1,0 +1,16 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+    <div class="skewangled{% if particle.css.class %} {{ particle.css.class }}{% endif %}">
+        <div class="skewangled-title">
+            {% if particle.title %}<h2>{{ particle.title|raw }}</h2>{% endif %}
+            {% if particle.subtitle %}<h3>{{ particle.subtitle|raw }}</h3>{% endif %}
+        </div>
+        <div class="skewed-left">
+            <div class="unskewed-left" style="background-image: url({{ url(particle.leftimage) }});"></div>
+        </div>
+        <div class="skewed-right">
+            <div class="unskewed-right" style="background-image: url({{ url(particle.rightimage) }});"></div>
+        </div>
+    </div>
+{% endblock %}
